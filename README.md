@@ -19,7 +19,9 @@ Proyek ini adalah sebuah aplikasi berbasis web yang berfungsi sebagai asisten vi
 - **Klasifikasi Otomatis**: Sistem secara otomatis mengidentifikasi ranah hukum kasus (Perdata atau Pidana).
 - **Pendekatan Agentik**: Menggunakan agen AI spesialis untuk setiap ranah hukum guna memastikan analisis yang relevan dan mendalam.
 - **Referensi Pasal Hukum Akurat**: Hasil analisis didukung oleh pasal-pasal yang diambil dari basis data hukum internal menggunakan teknologi RAG (Retrieval-Augmented Generation). Metode pencarian pasal menggunakan semantik yaitu dengan makna pasal bukan menggunakan kata kunci
-- **Antarmuka Sederhana**: Dibangun dengan Streamlit untuk kemudahan penggunaan.
+- **Agent**: Terdapat 1 agen Router untuk melakukan klasifikasi dan 2 agen lainnya (Agent Perdata dan Agent Pidana)untuk analisis lebih lanjut 
+  **Antarmuka Sederhana**: Dibangun dengan Streamlit untuk kemudahan penggunaan.
+
 
 ---
 
@@ -69,13 +71,10 @@ Berikut langkah-langkah untuk menginstal dan menjalankan proyek ini di komputer 
 
 1.  **Prasyarat**:
     * Pastikan Python (versi 3.9 atau lebih baru) sudah terinstal.
+    * Pastikan meiliki ollama3.
     * Anda memerlukan `pip` (Python package installer), yang biasanya sudah terpasang bersama Python.
 
-2.  **Clone Repositori**
-    ```bash
-    git clone [https://github.com/NAMA_PENGGUNA_ANDA/NAMA_REPOSITORI_ANDA.git](https://github.com/NAMA_PENGGUNA_ANDA/NAMA_REPOSITORI_ANDA.git)
-    cd NAMA_REPOSITORI_ANDA
-    ```
+2.  **DOWNLOAD Repositori**
 
 3.  **Instalasi Dependensi**:
     * Buka terminal atau Command Prompt.
@@ -108,6 +107,7 @@ Indeks FAISS di `retriever/index_store/` sudah dibuat sebelumnya. Jika Anda meng
 ---
 
 ## @Saulamandren 2025
+
 
 
 
