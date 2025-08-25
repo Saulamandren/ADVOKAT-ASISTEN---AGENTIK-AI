@@ -18,7 +18,7 @@ Proyek ini adalah sebuah aplikasi berbasis web yang berfungsi sebagai asisten vi
 - **Analisis Kasus Otomatis**: Cukup masukkan deskripsi kasus (kasus posisi), dan AI akan menganalisisnya.
 - **Klasifikasi Otomatis**: Sistem secara otomatis mengidentifikasi ranah hukum kasus (Perdata atau Pidana).
 - **Pendekatan Agentik**: Menggunakan agen AI spesialis untuk setiap ranah hukum guna memastikan analisis yang relevan dan mendalam.
-- **Referensi Pasal Hukum Akurat**: Hasil analisis didukung oleh pasal-pasal yang diambil dari basis data hukum internal menggunakan teknologi RAG (Retrieval-Augmented Generation).
+- **Referensi Pasal Hukum Akurat**: Hasil analisis didukung oleh pasal-pasal yang diambil dari basis data hukum internal menggunakan teknologi RAG (Retrieval-Augmented Generation). Metode pencarian pasal menggunakan semantik yaitu dengan makna pasal bukan menggunakan kata kunci
 - **Antarmuka Sederhana**: Dibangun dengan Streamlit untuk kemudahan penggunaan.
 
 ---
@@ -58,7 +58,7 @@ Berikut adalah teknologi spesifik yang menyusun aplikasi ini:
 * **Framework Aplikasi Web**: Streamlit (untuk membuat antarmuka pengguna interaktif dengan cepat).
 * **Orkestrasi AI/LLM**: LangChain (framework untuk membangun aplikasi yang ditenagai oleh LLM. Ini digunakan untuk membuat "rantai" atau chain yang menghubungkan prompt, model, dan output parser, serta mengelola agen).
 * **Pencarian Vektor (Vector Search)**: FAISS (Facebook AI Similarity Search) (digunakan untuk membuat database vektor dari dokumen hukum. Ini memungkinkan pencarian berbasis kemiripan makna yang sangat cepat dan efisien).
-* **Model Bahasa (LLM)**: Kode tidak secara spesifik menyebutkan modelnya (misalnya GPT-4, Gemini, dll.), karena LangChain bersifat fleksibel. Model ini dikonfigurasi melalui API Key yang diatur di lingkungan sistem Anda (misalnya `OPENAI_API_KEY`).
+* **Model Bahasa (LLM)**:  Pada pembacan file menggunakan sentence-transformers/all-MiniLM-L6-v2 dan untuk analisis serta menjawab mengunakan llama3:instruct
 * **Pengolahan Dokumen**: `python-docx` (untuk membaca file `.docx` seperti `Perdata.docx` dan `Pidana.docx`) dan `JSON` (untuk menyimpan data terstruktur).
 
 ---
@@ -108,6 +108,7 @@ Indeks FAISS di `retriever/index_store/` sudah dibuat sebelumnya. Jika Anda meng
 ---
 
 ## @Saulamandren 2025
+
 
 
 
