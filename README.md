@@ -28,22 +28,14 @@ Proyek ini adalah sebuah aplikasi berbasis web yang berfungsi sebagai asisten vi
 Program ini adalah aplikasi web berbasis AI yang berfungsi sebagai asisten hukum. Alur kerjanya dapat dipecah menjadi beberapa langkah utama, dari input pengguna hingga output analisis:
 
 1.  **Antarmuka Pengguna (UI)**: Pengguna membuka aplikasi melalui browser. Tampilan yang dibuat dengan Streamlit (`app.py`) menyajikan sebuah kotak teks di mana pengguna dapat memasukkan deskripsi kasus hukum mereka.
-<img width="1470" height="498" alt="image" src="https://github.com/user-attachments/assets/69c20ba9-15d0-4928-a0d2-dde117157db2" />
-<img width="1592" height="391" alt="image" src="https://github.com/user-attachments/assets/4b769781-5d6b-4179-a5e2-f2416613b9fc" />
-
 2.  **Klasifikasi Kasus (Langkah 1)**:
     * Setelah pengguna menekan tombol "Analisis Kasus", teks deskripsi dikirim ke **Agen Klasifikasi** (`agents/classification_agent.py`).
     * Agen ini menggunakan Model Bahasa (LLM) yang telah diinstruksikan secara spesifik (melalui prompt) untuk menganalisis teks dan mengklasifikasikannya sebagai kasus "Perdata" atau "Pidana".
     * Hasil klasifikasi (misalnya, "perdata") ditampilkan kepada pengguna.
-<img width="1532" height="198" alt="image" src="https://github.com/user-attachments/assets/9c0ef8e3-dff3-4411-bfa6-cf05c6e57b97" />
-
 3.  **Pemilihan Agen Spesialis (Langkah 2)**:
     * Berdasarkan hasil klasifikasi, program secara cerdas memilih agen yang tepat untuk menangani analisis mendalam.
     * Jika hasilnya "perdata", maka **Agen Perdata** (`agents/perdata_agent.py`) akan diaktifkan.
     * Jika hasilnya "pidana", maka **Agen Pidana** (`agents/pidana_agent.py`) yang akan digunakan.
-<img width="1485" height="132" alt="image" src="https://github.com/user-attachments/assets/1e745767-3ca5-4e3d-bd75-b15cbb7bc5cf" />
-
-
 4.  **Retrieval-Augmented Generation (RAG)**:
     * Ini adalah inti dari kemampuan analisis aplikasi. Sebelum menghasilkan jawaban, agen spesialis (Perdata/Pidana) akan mencari informasi yang relevan terlebih dahulu.
     * Agen menggunakan **Retriever Tool** (`retriever/retriever_tool.py`) untuk mencari pasal-pasal atau dokumen hukum yang paling relevan dengan deskripsi kasus pengguna.
@@ -56,8 +48,6 @@ Program ini adalah aplikasi web berbasis AI yang berfungsi sebagai asisten hukum
 
 6.  **Menampilkan Hasil**:
     * Analisis akhir yang sudah jadi kemudian dikirim kembali ke antarmuka Streamlit dan ditampilkan kepada pengguna dalam format yang rapi dan mudah dibaca.
-<img width="1514" height="795" alt="image" src="https://github.com/user-attachments/assets/190bf828-f0b9-48f4-8b4a-ca0164874fd0" />
-
 ---
 
 ## 🛠️ Teknologi yang Digunakan
@@ -95,20 +85,8 @@ Berikut langkah-langkah untuk menginstal dan menjalankan proyek ini di komputer 
     pip install -r requirements.txt
     ```
 
-4.  **Konfigurasi API Key**:
-    * Aplikasi ini memerlukan koneksi ke layanan Model Bahasa (LLM) seperti OpenAI atau Google AI. Anda perlu mengatur API Key sebagai *environment variable*.
-    * Contoh untuk OpenAI: Buka terminal dan jalankan perintah berikut (ganti `your_api_key_here` dengan kunci asli Anda):
-        * **Di Windows (Command Prompt)**:
-            ```bash
-            set OPENAI_API_KEY=your_api_key_here
-            ```
-        * **Di macOS/Linux**:
-            ```bash
-            export OPENAI_API_KEY='your_api_key_here'
-            ```
-    * **Penting**: Anda harus melakukan ini di terminal yang sama tempat Anda akan menjalankan aplikasi, atau mengaturnya secara permanen di sistem operasi Anda.
 
-5.  **Menjalankan Aplikasi**:
+4.  **Menjalankan Aplikasi**:
     * Pastikan Anda masih berada di direktori utama proyek di terminal Anda.
     * Jalankan aplikasi Streamlit dengan perintah berikut:
     ```bash
@@ -116,12 +94,21 @@ Berikut langkah-langkah untuk menginstal dan menjalankan proyek ini di komputer 
     ```
     * Setelah perintah dieksekusi, terminal akan menampilkan URL lokal (biasanya `http://localhost:8501`). Buka URL tersebut di browser web Anda untuk mulai menggunakan aplikasi.
 
+<img width="1592" height="391" alt="image" src="https://github.com/user-attachments/assets/4b769781-5d6b-4179-a5e2-f2416613b9fc" />
+<img width="1470" height="498" alt="image" src="https://github.com/user-attachments/assets/69c20ba9-15d0-4928-a0d2-dde117157db2" />
+<img width="1532" height="198" alt="image" src="https://github.com/user-attachments/assets/9c0ef8e3-dff3-4411-bfa6-cf05c6e57b97" />
+<img width="1485" height="132" alt="image" src="https://github.com/user-attachments/assets/1e745767-3ca5-4e3d-bd75-b15cbb7bc5cf" />
+<img width="1514" height="795" alt="image" src="https://github.com/user-attachments/assets/190bf828-f0b9-48f4-8b4a-ca0164874fd0" />
+
+
+
 **(Opsional) Jika Anda Mengubah Dokumen Hukum**:
 Indeks FAISS di `retriever/index_store/` sudah dibuat sebelumnya. Jika Anda mengubah atau menambah file `Perdata.docx` atau `Pidana.docx`, Anda perlu membuat ulang indeks tersebut dengan menjalankan skrip yang relevan (misalnya `index_perdata.py` atau skrip lain yang berfungsi untuk membangun indeks).
 
 ---
 
 ## @Saulamandren 2025
+
 
 
 
