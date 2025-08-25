@@ -8,7 +8,7 @@
 
 Proyek ini adalah sebuah aplikasi berbasis web yang berfungsi sebagai asisten virtual untuk advokat, mahasiswa hukum, atau masyarakat umum. Aplikasi ini memanfaatkan arsitektur *Agentik AI* untuk menganalisis deskripsi kasus hukum (kasus posisi) dan memberikan ringkasan, analisis hukum, serta pasal-pasal yang relevan dari peraturan perundang-undangan di Indonesia.
 
-![Demo Aplikasi Asisten Advokat AI]
+[Demo Aplikasi Asisten Advokat AI]
 <img width="1916" height="968" alt="image" src="https://github.com/user-attachments/assets/9677f8f9-fd2b-4bdd-ab3a-98eeb9416b04" />
 
 ---
@@ -94,8 +94,8 @@ Berikut langkah-langkah untuk menginstal dan menjalankan proyek ini di komputer 
     ```
     * Setelah perintah dieksekusi, terminal akan menampilkan URL lokal (biasanya `http://localhost:8501`). Buka URL tersebut di browser web Anda untuk mulai menggunakan aplikasi.
 
-<img width="1592" height="391" alt="image" src="https://github.com/user-attachments/assets/4b769781-5d6b-4179-a5e2-f2416613b9fc" />
 <img width="1470" height="498" alt="image" src="https://github.com/user-attachments/assets/69c20ba9-15d0-4928-a0d2-dde117157db2" />
+<img width="1592" height="391" alt="image" src="https://github.com/user-attachments/assets/4b769781-5d6b-4179-a5e2-f2416613b9fc" />
 <img width="1532" height="198" alt="image" src="https://github.com/user-attachments/assets/9c0ef8e3-dff3-4411-bfa6-cf05c6e57b97" />
 <img width="1485" height="132" alt="image" src="https://github.com/user-attachments/assets/1e745767-3ca5-4e3d-bd75-b15cbb7bc5cf" />
 <img width="1514" height="795" alt="image" src="https://github.com/user-attachments/assets/190bf828-f0b9-48f4-8b4a-ca0164874fd0" />
@@ -108,6 +108,7 @@ Indeks FAISS di `retriever/index_store/` sudah dibuat sebelumnya. Jika Anda meng
 ---
 
 ## @Saulamandren 2025
+
 
 
 
