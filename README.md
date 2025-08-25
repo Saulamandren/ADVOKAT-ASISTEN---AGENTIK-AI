@@ -25,7 +25,7 @@ Proyek ini adalah sebuah aplikasi berbasis web yang berfungsi sebagai asisten vi
 
 ---
 
-## ⚙️ Bagaimana Program Ini Bekerja (Alur Kerja Detail)
+## ⚙️ Bagaimana Program Ini Bekerja 
 
 Program ini adalah aplikasi web berbasis AI yang berfungsi sebagai asisten hukum. Alur kerjanya dapat dipecah menjadi beberapa langkah utama, dari input pengguna hingga output analisis:
 
@@ -107,6 +107,7 @@ Indeks FAISS di `retriever/index_store/` sudah dibuat sebelumnya. Jika Anda meng
 ---
 
 ## @Saulamandren 2025
+
 
 
 
